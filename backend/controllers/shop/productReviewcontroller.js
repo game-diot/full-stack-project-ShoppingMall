@@ -2,7 +2,7 @@ const Order = require("../models/order");
 const Product = require("../models/product");
 const ProductReview = require("../models/productReview");
 
-exports.createProductReview = async (req, res) => {
+const createProductReview = async (req, res) => {
   try {
     const { userId, productId, reviewMessage, reviewValue } = req.body;
     const order = await Order.findOne({
@@ -54,7 +54,7 @@ exports.createProductReview = async (req, res) => {
   }
 };
 
-exports.getProductReviews = async (req, res) => {
+const getProductReviews = async (req, res) => {
   try {
     const { productId } = req.params;
     const reviews = await ProductReview.find({ productId });
@@ -69,4 +69,9 @@ exports.getProductReviews = async (req, res) => {
       message: "获取评价失败",
     });
   }
+};
+
+module.exports = {
+  createProductReview,
+  getProductReviews,
 };

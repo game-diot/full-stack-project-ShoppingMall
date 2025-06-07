@@ -1,6 +1,6 @@
 const Order = require("../../models/Order");
 
-exports.getAllOrders = async (req, res) => {
+const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find();
     if (!orders.length) {
@@ -22,7 +22,7 @@ exports.getAllOrders = async (req, res) => {
   }
 };
 
-exports.getOrderDetails = async (req, res) => {
+const getOrderDetails = async (req, res) => {
   try {
     const { id } = req.params;
     const order = await Order.findById(id);
@@ -45,7 +45,7 @@ exports.getOrderDetails = async (req, res) => {
   }
 };
 
-exports.updateOrderStatus = async (req, res) => {
+const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
@@ -67,4 +67,10 @@ exports.updateOrderStatus = async (req, res) => {
       msg: "更新订单状态失败",
     });
   }
+};
+
+module.exports = {
+  getAllOrders,
+  getOrderDetails,
+  updateOrderStatus,
 };

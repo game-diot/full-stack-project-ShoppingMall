@@ -1,7 +1,7 @@
 const Cart = require("../../models/Cart");
 const Product = require("../../models/Product");
 
-exports.addToCart = async (req, res) => {
+const addToCart = async (req, res) => {
   try {
     const { userId, productId, quantity } = req.body;
     if (!userId || !productId || !quantity <= 0) {
@@ -48,7 +48,7 @@ exports.addToCart = async (req, res) => {
   }
 };
 
-exports.fentchCart = async (req, res) => {
+const fentchCart = async (req, res) => {
   try {
     const { userId } = req.params;
     if (!userId) {
@@ -100,7 +100,7 @@ exports.fentchCart = async (req, res) => {
   }
 };
 
-exports.updateCart = async (req, res) => {
+const updateCart = async (req, res) => {
   try {
     const { userId, productId, quantity } = req.body;
     if (!userId || !productId || !quantity <= 0) {
@@ -158,7 +158,7 @@ exports.updateCart = async (req, res) => {
   }
 };
 
-exports.deleteCart = async (req, res) => {
+const deleteCart = async (req, res) => {
   try {
     const { userId, productId } = req.params;
     if (!userId || !productId) {
@@ -206,4 +206,11 @@ exports.deleteCart = async (req, res) => {
       message: "服务器错误！",
     });
   }
+};
+
+module.exports = {
+  addToCart,
+  fentchCart,
+  updateCart,
+  deleteCart,
 };

@@ -1,6 +1,6 @@
 const Feature = require("../../models/Feature");
 
-exports.addFeatureImage = async (req, res) => {
+const addFeatureImage = async (req, res) => {
   try {
     const { image } = req.params;
     if (!image) {
@@ -27,7 +27,7 @@ exports.addFeatureImage = async (req, res) => {
   }
 };
 
-exports.getFeatureImages = async (req, res) => {
+const getFeatureImages = async (req, res) => {
   try {
     const featureImages = await Feature.find();
 
@@ -49,4 +49,9 @@ exports.getFeatureImages = async (req, res) => {
       error: error.message,
     });
   }
+};
+
+module.exports = {
+  addFeatureImage,
+  getFeatureImages,
 };

@@ -1,7 +1,7 @@
 const Address = require("../../models/Address");
 
 // 添加地址
-exports.addAddress = async (req, res) => {
+const addAddress = async (req, res) => {
   try {
     const { userId, address, city, pincode, phone, notes } = req.body;
     if (!userId || !address || !city || !pincode || !phone || !notes) {
@@ -32,7 +32,7 @@ exports.addAddress = async (req, res) => {
   }
 };
 
-exports.getAddress = async (req, res) => {
+const getAddress = async (req, res) => {
   try {
     const { userId } = req.body;
     if (!userId) {
@@ -61,7 +61,7 @@ exports.getAddress = async (req, res) => {
   }
 };
 
-exports.updateAddress = async (req, res) => {
+const updateAddress = async (req, res) => {
   try {
     const { userId, addressId } = req.params;
     const formData = req.body;
@@ -96,7 +96,7 @@ exports.updateAddress = async (req, res) => {
   }
 };
 
-exports.deleteAddress = async (req, res) => {
+const deleteAddress = async (req, res) => {
   try {
     const { userId, addressId } = req.params;
     if (!userId || !addressId) {
@@ -122,4 +122,11 @@ exports.deleteAddress = async (req, res) => {
       msg: "删除地址失败",
     });
   }
+};
+
+module.exports = {
+  addAddress,
+  getAddress,
+  updateAddress,
+  deleteAddress,
 };

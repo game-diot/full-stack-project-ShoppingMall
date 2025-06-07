@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/User");
 
 // 登录
-exports.login = async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -65,7 +65,7 @@ exports.login = async (req, res) => {
 };
 
 // 注册
-exports.register = async (req, res) => {
+const register = async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
@@ -76,23 +76,24 @@ exports.register = async (req, res) => {
         success: false,
         msg: "用户已存在",
       });
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(password, salt);
-
-      // 创建新用户
-      user = new User({
-        username,
-        email,
-        password: hashedPassword,
-      });
-
-      await user.save();
-
-      res.json({
-        success: true,
-        msg: "注册成功",
-      });
     }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // 创建新用户
+    user = new User({
+      username,
+      email,
+      password: hashedPassword,
+    });
+
+    await user.save();
+
+    res.json({
+      success: true,
+      msg: "注册成功",
+    });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("服务器错误").json({
@@ -103,10 +104,16 @@ exports.register = async (req, res) => {
 };
 
 // 退出
-exports.logout = async (req, res) => {
+const logout = async (req, res) => {
   res.clearCookie("token");
   res.json({
     success: true,
     msg: "退出成功",
   });
+};
+
+module.exports = {
+  login,
+  register,
+  logout,
 };

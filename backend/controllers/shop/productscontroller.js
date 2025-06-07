@@ -1,6 +1,6 @@
 const Product = require("../../models/Product");
 
-exports.getFilteredProducts = async (req, res) => {
+const getFilteredProducts = async (req, res) => {
   try {
     const { category = [], brand = [], storBy = "price-up" } = req.query;
 
@@ -48,7 +48,7 @@ exports.getFilteredProducts = async (req, res) => {
   }
 };
 
-exports.getProductDetails = async (req, res) => {
+const getProductDetails = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await Product.findById(id);
@@ -69,4 +69,9 @@ exports.getProductDetails = async (req, res) => {
       msg: "服务器错误",
     });
   }
+};
+
+module.exports = {
+  getFilteredProducts,
+  getProductDetails,
 };
