@@ -7,7 +7,7 @@ const {
 
 const router = express.Router();
 
-router.get("/get", getAllOrders);
+router.get("/", getAllOrders);
 router.get("/details/:id", getOrderDetails);
 router.put("/update/:id", updateOrderStatus);
 
