@@ -2,7 +2,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "../../utils/cn"; // 导入 cn 工具函数，用于 Tailwind CSS 类名合并
-import MainLayout from "../../layouts/MainLayout"; // 导入你的主布局组件
+import MainLayout from "../../layouts/mainLayout"; // 导入你的主布局组件
 // import LockIllustration from '../../assets/images/lock-illustration.svg'; // 假设你有一个锁的插画
 
 function UnauthPage() {

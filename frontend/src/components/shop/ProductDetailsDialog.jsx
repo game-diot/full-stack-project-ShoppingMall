@@ -1,16 +1,21 @@
 import { StarIcon } from "lucide-react";
-import { Avatar, AvatarFallback } from "../ui/avatar";
-import { Button } from "../ui/button";
-import { Dialog, DialogContent } from "../ui/dialog";
-import { Separator } from "../ui/separator";
-import { Input } from "../ui/input";
+import { Avatar, AvatarFallback } from "../common/ui/avatar";
+import { Button } from "../common/ui/button";
+import { Dialog, DialogContent } from "../common/ui/dialog";
+import { Separator } from "../common/ui/separator";
+import { Input } from "../common/ui/input";
 import { useDispatch, useSelector } from "react-redux";
+
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-import { useToast } from "../ui/use-toast";
+
+import { useToast } from "../common/ui/use-toast";
+
 import { setProductDetails } from "@/store/shop/products-slice";
-import { Label } from "../ui/label";
-import StarRatingComponent from "../common/star-rating";
+
+import { Label } from "../common/ui/label";
+import StarRatingComponent from "../common/StartRating/StartRating";
 import { useEffect, useState } from "react";
+
 import { addReview, getReviews } from "@/store/shop/review-slice";
 
 function ProductDetailsDialog({ open, setOpen, productDetails }) {

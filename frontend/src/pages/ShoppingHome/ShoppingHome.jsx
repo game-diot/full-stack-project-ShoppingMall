@@ -17,18 +17,23 @@ import {
   WashingMachine,
   WatchIcon,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   fetchAllFilteredProducts,
   fetchProductDetails,
 } from "@/store/shop/products-slice";
-import ShoppingProductTile from "@/components/shopping-view/product-tile";
+
+import ShoppingProductTile from "../../components/shop/ShoppingProductTile";
 import { useNavigate } from "react-router-dom";
+
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-import { useToast } from "@/components/ui/use-toast";
-import ProductDetailsDialog from "@/components/shopping-view/product-details";
+
+import { useToast } from "../../components/ui/use-toast";
+import ProductDetailsDialog from "../../components/shop/ProductDetailsDialog";
+
 import { getFeatureImages } from "@/store/common-slice";
 
 const categoriesWithIcon = [

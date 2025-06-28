@@ -1,3 +1,4 @@
+// 导入吐司通知的组件
 import {
   Toast,
   ToastClose,
@@ -5,17 +6,17 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/components/ui/toast"
-import { useToast } from "@/components/ui/use-toast"
-
+} from "./toast";
+import { useToast } from "./use-toast";
+// 定义吐司通知器
 export function Toaster() {
-  const { toasts } = useToast()
-
+  const { toasts } = useToast();
+  // 导出吐司通知器组件
   return (
-    (<ToastProvider>
+    <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
-          (<Toast key={id} {...props}>
+          <Toast key={id} {...props}>
             <div className="grid gap-1">
               {title && <ToastTitle>{title}</ToastTitle>}
               {description && (
@@ -24,10 +25,10 @@ export function Toaster() {
             </div>
             {action}
             <ToastClose />
-          </Toast>)
+          </Toast>
         );
       })}
       <ToastViewport />
-    </ToastProvider>)
+    </ToastProvider>
   );
 }

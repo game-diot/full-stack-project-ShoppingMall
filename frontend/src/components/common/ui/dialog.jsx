@@ -1,17 +1,17 @@
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
+import { cn } from "../../../utils/cn";
 
-import { cn } from "@/lib/utils";
-
+// 定义对话框组件
 const Dialog = DialogPrimitive.Root;
-
+// 定义对话框触发器组件
 const DialogTrigger = DialogPrimitive.Trigger;
-
+// 定义对话框内容组件
 const DialogPortal = DialogPrimitive.Portal;
-
+// 定义对话框关闭按钮组件
 const DialogClose = DialogPrimitive.Close;
-
+// 定义对话框遮罩组件
 const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
@@ -23,7 +23,7 @@ const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
-
+// 定义对话框内容组件，组件结构为顶层渲染，遮罩层，对话框主体，关闭按钮X
 const DialogContent = React.forwardRef(
   ({ className, children, ...props }, ref) => (
     <DialogPortal>
@@ -46,7 +46,7 @@ const DialogContent = React.forwardRef(
   )
 );
 DialogContent.displayName = DialogPrimitive.Content.displayName;
-
+// 定义对话框头部组件，组件结构为对话框标题，对话框描述
 const DialogHeader = ({ className, ...props }) => (
   <div
     className={cn(
@@ -57,7 +57,7 @@ const DialogHeader = ({ className, ...props }) => (
   />
 );
 DialogHeader.displayName = "DialogHeader";
-
+// 定义对话框脚部组件，组件结构为对话框脚部按钮组
 const DialogFooter = ({ className, ...props }) => (
   <div
     className={cn(
@@ -68,7 +68,7 @@ const DialogFooter = ({ className, ...props }) => (
   />
 );
 DialogFooter.displayName = "DialogFooter";
-
+// 定义对话框标题组件，组件结构为对话框标题文字
 const DialogTitle = React.forwardRef(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
@@ -80,7 +80,7 @@ const DialogTitle = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
-
+// 定义对话框描述组件，组件结构为对话框描述文字
 const DialogDescription = React.forwardRef(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
@@ -89,7 +89,7 @@ const DialogDescription = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
-
+// 导出对话框组件，对话框触发器组件，对话框内容组件，对话框关闭按钮组件，对话框遮罩组件，对话框头部组件，对话框脚部组件，对话框标题组件，对话框描述组件
 export {
   Dialog,
   DialogPortal,

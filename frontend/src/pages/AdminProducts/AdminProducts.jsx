@@ -1,21 +1,23 @@
-import ProductImageUpload from "@/components/admin-view/image-upload";
-import AdminProductTile from "@/components/admin-view/product-tile";
-import CommonForm from "@/components/common/form";
-import { Button } from "@/components/ui/button";
+import ProductImageUpload from "../../components/common/admin-view/image-upload/ProductImageUpload";
+import AdminProductTile from "../../components/common/admin-view/product-tile/AdminProductTile";
+import CommonForm from "../../components/common/form/CommonForm";
+import { Button } from "../../components/common/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
-import { useToast } from "@/components/ui/use-toast";
-import { addProductFormElements } from "@/config";
+} from "../../components/common/ui/sheet";
+import { useToast } from "../../components/common/ui/use-toast";
+import { addProductFormElements } from "../../utils/constants";
+
 import {
   addNewProduct,
   deleteProduct,
   editProduct,
   fetchAllProducts,
 } from "@/store/admin/products-slice";
+
 import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

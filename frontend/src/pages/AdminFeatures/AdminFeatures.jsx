@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../../utils/cn"; // 假设你已经有了 cn 工具函数
-import MainLayout from "../../layouts/MainLayout"; // 导入你的主布局组件
+import MainLayout from "../../layouts/mainLayout"; // 导入你的主布局组件
 
 // 假设这些是你要在 AdminFeatures 页面展示的功能卡片数据
 const adminFeatureCards = [

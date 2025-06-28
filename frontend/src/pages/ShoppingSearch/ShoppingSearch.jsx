@@ -1,13 +1,15 @@
-import ProductDetailsDialog from "@/components/shopping-view/product-details";
-import ShoppingProductTile from "@/components/shopping-view/product-tile";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
+import ProductDetailsDialog from "../../components/shop/ProductDetailsDialog";
+import ShoppingProductTile from "../../components/shop/ShoppingProductTile";
+import { Input } from "../../components/ui/input";
+import { useToast } from "../../components/ui/use-toast";
+
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { fetchProductDetails } from "@/store/shop/products-slice";
 import {
   getSearchResults,
   resetSearchResults,
 } from "@/store/shop/search-slice";
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";

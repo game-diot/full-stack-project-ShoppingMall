@@ -7,7 +7,7 @@ import {
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
-
+// 定义管理员侧边栏菜单项
 const adminSidebarMenuItems = [
   {
     id: "dashboard",
@@ -28,10 +28,10 @@ const adminSidebarMenuItems = [
     icon: <BadgeCheck />,
   },
 ];
-
+// 定义管理员侧边栏菜单项组件
 function MenuItems({ setOpen }) {
   const navigate = useNavigate();
-
+  // 导出管理员侧边栏菜单项组件,为items组遍历三个内容
   return (
     <nav className="mt-8 flex-col flex gap-2">
       {adminSidebarMenuItems.map((menuItem) => (
@@ -50,10 +50,10 @@ function MenuItems({ setOpen }) {
     </nav>
   );
 }
-
+// 定义管理员侧边栏组件,接收open和setOpen作为参数,用于控制侧边栏的打开和关闭
 function AdminSideBar({ open, setOpen }) {
   const navigate = useNavigate();
-
+  // 导出管理员侧边栏组件,为open和setOpen添加判断,如果open为true,则显示侧边栏,否则不显示
   return (
     <Fragment>
       <Sheet open={open} onOpenChange={setOpen}>

@@ -10,13 +10,17 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import AdminOrderDetailsView from "./order-details";
+import AdminOrderDetailsView from "./AdminOrderDetailsView";
 import { useDispatch, useSelector } from "react-redux";
+
+
 import {
   getAllOrdersForAdmin,
   getOrderDetailsForAdmin,
   resetOrderDetails,
 } from "@/store/admin/order-slice";
+
+
 import { Badge } from "../ui/badge";
 
 function AdminOrdersView() {

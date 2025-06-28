@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "../../utils/cn"; // 假设你已经有了 cn 工具函数
 // import NotFoundIllustration from '../../assets/images/not-found-illustration.svg'; // 假设你有插画
-import MainLayout from "../../layouts/MainLayout"; // 导入你的主布局组件
+import MainLayout from "../../layouts/mainLayout"; // 导入你的主布局组件
 
 function NotFoundPage() {
   const navigate = useNavigate(); // 用于编程式导航

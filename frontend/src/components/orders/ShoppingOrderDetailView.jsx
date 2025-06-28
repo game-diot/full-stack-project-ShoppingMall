@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { Badge } from "../ui/badge";
-import { DialogContent } from "../ui/dialog";
-import { Label } from "../ui/label";
-import { Separator } from "../ui/separator";
+import { Badge } from "../common/ui/badge";
+import { DialogContent } from "../common/ui/dialog";
+import { Label } from "../common/ui/label";
+import { Separator } from "../common/ui/separator";
 
 function ShoppingOrderDetailsView({ orderDetails }) {
   const { user } = useSelector((state) => state.auth);

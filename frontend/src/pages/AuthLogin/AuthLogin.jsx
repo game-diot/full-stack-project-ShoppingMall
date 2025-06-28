@@ -1,6 +1,6 @@
-import CommonForm from "@/components/common/form";
-import { useToast } from "@/components/ui/use-toast";
-import { loginForm } from "src/utils/constants";
+import CommonForm from "../../components/common/form/CommonForm";
+import { useToast } from "../../components/common/ui/use-toast";
+import { loginForm } from "../../utils/constants";
 
 import { loginUser } from "@/store/auth-slice";
 

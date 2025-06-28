@@ -1,6 +1,6 @@
 import React from "react";
-import MainLayout from "../../layouts/MainLayout"; // 你的主布局
-import AdminOrdersView from "@/components/admin-view/orders"; // 导入订单视图组件
+import MainLayout from "../../layouts/mainLayout"; // 你的主布局
+import AdminOrdersView from "../../components/common/admin-view/orders/AdminOrdersView"; // 导入订单视图组件
 import { cn } from "../../utils/cn"; // 导入 cn 工具函数
 import { Link } from "react-router-dom"; // 用于面包屑导航
 

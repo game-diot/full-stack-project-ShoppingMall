@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter } from "../ui/card";
-
+// 定义管理员产品组件
 function AdminProductTile({
   product,
   setFormData,
@@ -8,6 +8,7 @@ function AdminProductTile({
   setCurrentEditedId,
   handleDelete,
 }) {
+  // 导出管理员产品组件
   return (
     <Card className="w-full max-w-sm mx-auto">
       <div>
