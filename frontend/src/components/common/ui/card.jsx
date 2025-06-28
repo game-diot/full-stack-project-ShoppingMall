@@ -1,7 +1,6 @@
 import * as React from "react";
-
-import { cn } from "@/lib/utils";
-
+import { cn } from "../../../utils/cn";
+// 定义卡片组件，接收类名、属性参数，使用cn处理类名合并，返回卡片元素
 const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
@@ -13,7 +12,7 @@ const Card = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 Card.displayName = "Card";
-
+// 定义卡片标题组件，接收类名、属性参数，使用cn处理类名合并，返回卡片标题元素
 const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
@@ -22,7 +21,7 @@ const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 CardHeader.displayName = "CardHeader";
-
+// 定义卡片标题组件，接收类名、属性参数，使用cn处理类名合并，返回卡片标题元素
 const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h3
     ref={ref}
@@ -34,7 +33,7 @@ const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 CardTitle.displayName = "CardTitle";
-
+// 定义卡片描述组件，接收类名、属性参数，使用cn处理类名合并，返回卡片描述元素
 const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
   <p
     ref={ref}
@@ -43,12 +42,12 @@ const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 CardDescription.displayName = "CardDescription";
-
+// 定义卡片内容组件，接收类名、属性参数，使用cn处理类名合并，返回卡片内容元素
 const CardContent = React.forwardRef(({ className, ...props }, ref) => (
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ));
 CardContent.displayName = "CardContent";
-
+// 定义卡片底部组件，接收类名、属性参数，使用cn处理类名合并，返回卡片底部元素
 const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
@@ -57,7 +56,7 @@ const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 CardFooter.displayName = "CardFooter";
-
+// 导出卡片组件、卡片标题组件、卡片描述组件、卡片内容组件、卡片底部组件
 export {
   Card,
   CardHeader,

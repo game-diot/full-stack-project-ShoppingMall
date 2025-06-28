@@ -2,9 +2,10 @@ import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-
+import { cn } from "../../../utils/cn";
+// 定义复选框组件，接收类名、属性参数，使用cn处理类名合并，返回复选框元素
 const Checkbox = React.forwardRef(({ className, ...props }, ref) => (
+  // 复选框结构为根组件内包含指示器，内包含图标
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(
@@ -21,5 +22,5 @@ const Checkbox = React.forwardRef(({ className, ...props }, ref) => (
   </CheckboxPrimitive.Root>
 ));
 Checkbox.displayName = CheckboxPrimitive.Root.displayName;
-
+// 导出复选框组件
 export { Checkbox };

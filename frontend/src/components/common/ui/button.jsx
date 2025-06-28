@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
+import { cn } from "../../../utils/cn";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -32,9 +31,10 @@ const buttonVariants = cva(
     },
   }
 );
-
+// 定义按钮组件，接收类名、变体、尺寸、子元素模式、属性参数，使用cn处理类名合并，返回按钮元素
 const Button = React.forwardRef(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
+    // 定义按钮元素类型，根据子元素模式选择Slot插槽元素或默认的button按钮元素
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
@@ -46,5 +46,5 @@ const Button = React.forwardRef(
   }
 );
 Button.displayName = "Button";
-
+// 导出按钮组件、buttonVariants按钮变体
 export { Button, buttonVariants };
